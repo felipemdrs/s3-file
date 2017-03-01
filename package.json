@@ -1,0 +1,24 @@
+{
+  "name": "s3-file",
+  "version": "0.0.1",
+  "description": "Simple module to manage files (upload, download, delete) on the Amazon S3.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cloud",
+    "file",
+    "amazon",
+    "s3",
+    "aws",
+    "upload",
+    "download"
+  ],
+  "author": "Felipe Miranda <felipemm.dev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.22.0",
+    "is-stream": "^1.1.0",
+  }
+}
