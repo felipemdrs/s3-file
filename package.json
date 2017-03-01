@@ -15,10 +15,10 @@
     "upload",
     "download"
   ],
-  "author": "Felipe Miranda <felipemm.dev@gmail.com>",
+  "author": "Felipe Miranda",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.22.0",
-    "is-stream": "^1.1.0",
+    "is-stream": "^1.1.0"
   }
 }
