@@ -123,29 +123,23 @@ module.exports = function(config) {
 
     /**
     *
-    * Download S3 file to stream
+    * Download S3 file to stream or file
     *
     * @param {string} fileKey - The filename, unique filename to persist on S3
     * @param {string} bucket - The bucket created in S3
-    * @param {function(error, Stream)} cb - A callback thats indicate if error has ocurred, case success returns the stream
     *
     */
-    downloadToStream: function(fileKey, bucket, cb) {
-      downloadToStream(fileKey, bucket, cb || fallback);
-    },
-
-    /**
-    *
-    * Download S3 file to local file
-    *
-    * @param {string} fileKey - The filename, unique filename to persist on S3
-    * @param {string} bucket - The bucket created in S3
-    * @param {ouputPath} outputPath - The local path to save S3 file. The destiny is outputPath/fileKey
-    * @param {function(error, string)} cb - A callback thats indicate if error has ocurred, case success returns the full path
-    *
-    */
-    downloadToFile: function(fileKey, bucket, outputPath, cb) {
-      downloadToFile(fileKey, bucket, outputPath, cb || fallback);
+    download: function(fileKey, bucket) {
+      return {
+        /** @param {function(error, stream)} cb - A callback thats indicate if error has ocurred, case success returns the stream */
+        toStream: function (cb) {
+          downloadToStream(fileKey, bucket, cb);
+        },
+        /** @param {function(error, string)} cb - A callback thats indicate if error has ocurred, case success returns the full path */
+        toFile: function (outputPath, cb) {
+          downloadToFile(fileKey, bucket, outputPath, cb);
+        }
+      };
     },
 
     /**
