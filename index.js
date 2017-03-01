@@ -131,7 +131,7 @@ module.exports = function(config) {
     *
     */
     downloadToStream: function(fileKey, bucket, cb) {
-      downloadStream(fileKey, bucket, cb || fallback);
+      downloadToStream(fileKey, bucket, cb || fallback);
     },
 
     /**

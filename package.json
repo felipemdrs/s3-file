@@ -4,7 +4,7 @@
   "description": "Simple module to manage files (upload, download, delete) on the Amazon S3.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "keywords": [
     "cloud",
@@ -20,5 +20,9 @@
   "dependencies": {
     "aws-sdk": "^2.22.0",
     "is-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
